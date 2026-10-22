@@ -4,7 +4,7 @@
 
 ## v0.4.1（2026-10-23）
 
-修复版本，不含新功能。21 项修复基于上游 v0.4.0（`370eb4fab`）之后的审查，逐条列出提交号以便核对；另含 3 项工程变更（测试跳过、持续集成、版本与发布文档），见文末「工程与发布」。
+修复版本，不含新功能。21 项修复基于上游 v0.4.0（`370eb4fab`）之后的审查，逐条列出提交号以便核对；另含 7 项工程变更（测试跳过、持续集成、版本与发布文档、3 项 CI 环境修复），见文末「工程与发布」。
 
 ### 安全与边界
 
@@ -55,9 +55,13 @@
 
 ### 工程与发布
 
-- `f6ab2f1` 测试：缺本地 Whisper 模型、缺可选 Motion Web / Onetake 库时显式跳过并留痕；已导入的库读取失败仍然失败，不会被跳过掩盖。
-- `d59f3d9` 持续集成：新增 `.github/workflows/ci.yml`，在 Windows runner 上安装 ffmpeg、构建 UI，再跑完整测试套件。
-- `6eec56b` 版本与文档：`package.json`、`package-lock.json`、`src/version.mjs` 同步到 0.4.1；新增本文件与 `docs/release-v0.4.1.md`，README 版本段指向新发布说明。
+- `1568fa0` 测试：缺本地 Whisper 模型、缺可选 Motion Web / Onetake 库时显式跳过并留痕；已导入的库读取失败仍然失败，不会被跳过掩盖。
+- `624ae34` 持续集成：新增 `.github/workflows/ci.yml`，在 Windows runner 上安装 ffmpeg、构建 UI，再跑完整测试套件。
+- `20f14e8` 测试：CI 上的取消等待上限放宽到 20 秒（仅 `EAC_CI`）；「每个子进程必须退出」的断言不变。
+- `8a45683` 测试：CI runner 没有交互桌面，桌面录制与 SAPI 取消用例在 `EAC_CI` 下显式跳过并写明原因。
+- `5d6da01` 测试：runner 上 pid 可能被其他账号复用，`process.kill` 抛 `EPERM`；`assertExited` 把 `EPERM` 视为子进程已退出，仍由本进程持有的 pid 照旧判失败。
+- `e01e768` 文档：本文件与 `docs/release-v0.4.1.md`。
+- `5939c2a` 版本：`package.json`、`package-lock.json`、`src/version.mjs` 同步到 0.4.1；README 版本段指向新发布说明。
 
 ### 行为变化（升级须知）
 
