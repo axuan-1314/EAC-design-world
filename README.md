@@ -21,7 +21,7 @@ DeepSeek Harness 的本地视频制作与设计工作室
 
 EAC design world 为 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 提供原生创作模式、模板选择和右侧作品画布，同时拥有可独立运行的本地工作台。视频录制、配音、配乐、字幕、编码与检查产生真实文件；网站、幻灯片、SVG 和文档保留源文件及版本历史。
 
-当前版本为 **v0.4.0 开发预览版**。本版新增 150 个 Shotcraft 镜头、动态选片与项目素材导入，重做模板预览播放器并优化状态轮询，详见 [发布说明](docs/release-v0.4.0.md)。保留插件维护、签名更新与回滚、草稿恢复和隔离预览。Windows 上的录屏、语音、转录和渲染流程已执行测试；其他平台的桌面录制与本地语音未实现。模板数量代表可检索内容，不代表每个模板均可离线直接渲染。
+当前版本为 **v0.4.1 开发预览版**，是 v0.4.0 之后的修复版：模板与渲染入口收容、数据目录独占锁、媒体时长与导出边界、转录错误语义、本地安装一次性令牌，并补回 900 个被 `.gitignore` 误伤的 OpenDesign 设计体系模板。详见 [发布说明](docs/release-v0.4.1.md) 与 [CHANGELOG](CHANGELOG.md)。保留插件维护、签名更新与回滚、草稿恢复和隔离预览。Windows 上的录屏、语音、转录和渲染流程已执行测试；其他平台的桌面录制与本地语音未实现。模板数量代表可检索内容，不代表每个模板均可离线直接渲染。
 
 <p align="center"><b>以下两条宣传片均为 deepseek harness + EAC design world + deepseek v4.1 flash（非 1017）一轮出的结果</b></p>
 
@@ -96,7 +96,7 @@ npm run motion:verify
 
 ## 下载与安装
 
-从 [Releases](https://github.com/Ebony-Vinyl/EAC-design-world/releases) 下载同一版本的文件：
+从 [Releases](https://github.com/Ebony-Vinyl/EAC-design-world/releases) 下载同一版本的文件。下表以最近一次发布的 v0.4.0 为例，v0.4.1 沿用同一产物布局，文件名随版本号变化：
 
 | 文件 | 用途 |
 | --- | --- |
